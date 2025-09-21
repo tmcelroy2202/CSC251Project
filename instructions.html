@@ -1,0 +1,132 @@
+Project Submission Instructions:
+Submit a link to your remote GitHub repository. You do not need to submit the Java source code (the file with a .java extension) or the class file (the file with a .class extension that is generated when you compile your code).
+Chapter Review:
+Chapter 6 (as well as concepts from Chapters 2 - 5)
+Students should completeallpractice programsbeforestarting the project. Students should use only code reviewed in the chapters listed above and sample code provided by the instructor to complete this project.
+Important:
+This assignment is a mandatory assignment that is worth 0 points. It must be completed and submitted for attendance purposes.
+After the due date, a solution to the assignment will become available if you have submitted your attempt through Brightspace. It is important to review the solution and compare it with the code that you wrote. If there are any differences between the code you wrote and what is shown in the solution, or you have questions about why the provided solution does something a certain way, you should email your instructor with the specific questions. This will help you to develop you troubleshooting and debugging skills, which is something employers value!
+Reviewing the solution and understanding any errors or irregularities in your own code will be critical in order to do well on the Programming Exams.
+Instructions:
+IMPORTANT: Please completely read through the instructions before beginning the assignment. If you have any questions, reach out before attempting to complete the assignment.
+You are tasked with writing an application that will keep track of insurance policies.
+Navigate to the Java program you created in the GitHub Repository Instructions document (Project_firstname_lastname- replaced with your name).
+Note:The project should remain in the CSC151Project folder created in the GitHub Repository Instructions document. If you did not complete the GitHub Repository Instructions, you should complete the steps before starting this assignment.
+
+
+
+Open jGRASP and create a new Java file.
+Click File/Save Asand save the file in the CSC151Project folder created in the GitHub Repository Instruction document.
+Name the filePolicy.java.
+Open (or return to) theGitHub Desktop. The program file added to the repository's directory should appear in the Changes column.
+Click the buttonCommit to Project-1.
+
+
+
+Create a Policy class that will model an insurance policy for one person.
+Use the following guidelines to create the Policy class:
+
+An insurance policy has the following attributes:
+
+Policy Number
+Provider Name
+Policyholder’s First Name
+Policyholder’s Last Name
+Policyholder’s Age
+Policyholder’s Smoking Status (will be “smoker” or “non-smoker”)
+Policyholder’s Height (in inches)
+Policyholder’s Weight (in pounds)
+
+
+
+Include a no-arg constructor (set default values for all fields).
+Include a constructor that accepts arguments (it must accept all necessary arguments to fully initialize the Policy object).
+Include appropriate setters and getters (i.e., mutator and accessor methods) for each field.
+Include a method that calculates and returns the BMI of the policyholder.*
+
+BMI = (Policyholder’s Weight * 703 ) / (Policyholder’s Height2).
+
+
+
+
+Include a method that calculates and returns the price of the insurance policy*
+
+The Insurance Policy has a base fee of $600
+If the Policyholder is over 50 years old, there is an additional fee of $75
+If the Policyholder is a smoker, there is an additional fee of $100
+If the Policyholder has a BMI of over 35, there is an additional fee calculated as follows:
+
+Additional Fee = ( BMI – 35 ) * 20
+
+
+
+*Note: this is a calculated amount based on some of the attributes above.
+Make sure to avoid having a stale value for this calculation. See "Avoiding Stale Data" in Section 6.2
+GitHubDesktop Commit:
+
+
+
+
+
+Save the project. Minimize the jGraspwindow.
+Open the GitHubDesktop program on your computer. You will see your code.
+In the Description window enter the text:Added code for Policy class.
+Click the button: Commit to Project-1.
+Return to your project and continue to complete the next steps.
+
+
+
+
+
+Demonstrate your Policy class by writing a Demo class (this is the "Project_firstname_lastname" class that you created when setting up your repository). The Demo class should ask the user to enter all necessary information, create a single instance of the Policy class using the constructor that accepts arguments, and then display all the information about the policy using the appropriate methods of the Policy class. See the Sample Input and Output below for how to format the input and output of the Demo class (make sure to match the wording and formatting exactly).
+GitHubDesktop Commit:
+You will make one last commit to your Project-1 branch. After completing the last commit, you will merge and push all changes to the remote repository.
+
+
+
+In the Description field in the bottom left of the window, enter the text:Added code for demo class.
+Click the Commit to Project-1 button.
+Switch to the main branch by clicking on the Current Branch menu. Select main.
+Go to Branch -&gt; Merge into current branch...
+Select the Project-1 branch.
+Click the button:Merge Project-1into main.
+
+This step will merge all the changes into the main branch.
+
+
+Click the button: Push originto push all the changes to the remote repository (i.e., the repository hosted on GitHub.com).
+
+
+
+Submission Instructions
+
+
+
+Sign in to GitHub.com.
+Click the CSC251Project repository link. (Note: look under the Repositories list.)
+Submit the link to your repository for this assignment.
+
+
+
+
+Sample Input:
+Please enter the Policy Number:1234
+Please enter the Provider Name:State Farm
+Please enter the Policyholder’s First Name:John
+Please enter the Policyholder’s Last Name:Doe
+Please enter the Policyholder’s Age:24
+Please enter the Policyholder’s Smoking Status (smoker/non-smoker):non-smoker
+Please enter the Policyholder’s Height (in inches):62.0
+Please enter the Policyholder’s Weight (in pounds):250.5
+
+Sample Output:
+Policy Number: 1234
+Provider Name: State Farm
+Policyholder’s First Name: John
+Policyholder’s Last Name: Doe
+Policyholder’s Age: 24
+Policyholder’s Smoking Status: non-smoker
+Policyholder’s Height: 62.0 inches
+Policyholder’s Weight: 250.5 pounds
+Policyholder’s BMI: 45.81
+Policy Price: $816.24
