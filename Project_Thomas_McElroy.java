@@ -3,27 +3,28 @@ import java.util.Scanner;
 public class Project_Thomas_McElroy {
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
-    Policy myPolicy = new Policy();
 
     System.out.print("Please enter the Policy Number: ");
-    myPolicy.setNumber(scan.nextInt());
+    int number = scan.nextInt();
     scan.nextLine();
 
     System.out.print("Please enter the Provider Name: ");
-    myPolicy.setProviderName(scan.nextLine());
+    String providerName = scan.nextLine();
     System.out.print("Please enter the Policyholder’s First Name: ");
-    myPolicy.setHolderFirstName(scan.nextLine());
+    String holderFirstName = scan.nextLine();
     System.out.print("Please enter the Policyholder’s Last Name: ");
-    myPolicy.setHolderLastName(scan.nextLine());
+    String holderLastName = scan.nextLine();
     System.out.print("Please enter the Policyholder’s Age: ");
-    myPolicy.setHolderAge(scan.nextInt());
+    int holderAge = scan.nextInt();
     scan.nextLine();
     System.out.print("Please enter the Policyholder’s Smoking Status (smoker/non-smoker): ");
-    myPolicy.setHolderSmoker(scan.nextLine());
+    String holderSmoker = scan.nextLine();
     System.out.print("Please enter the Policyholder’s Height (in inches): ");
-    myPolicy.setHolderHeight(scan.nextFloat());
+    float holderHeight = scan.nextFloat();
     System.out.print("Please enter the Policyholder’s Weight (in pounds): ");
-    myPolicy.setHolderWeight(scan.nextFloat());
+    float holderWeight = scan.nextFloat();
+
+    Policy myPolicy = new Policy(number,providerName,holderFirstName,holderLastName,holderAge,holderSmoker,holderWeight,holderHeight);
 
     System.out.print("Policy Number: ");
     System.out.println(myPolicy.getNumber());
@@ -38,13 +39,15 @@ public class Project_Thomas_McElroy {
     System.out.print("Policyholder’s Smoking Status: ");
     System.out.println(myPolicy.getHolderSmoker());
     System.out.print("Policyholder’s Height: ");
-    System.out.println(myPolicy.getHolderHeight());
+    System.out.print(myPolicy.getHolderHeight());
+    System.out.println(" inches");
     System.out.print("Policyholder’s Weight: ");
-    System.out.println(myPolicy.getHolderWeight());
+    System.out.print(myPolicy.getHolderWeight());
+    System.out.println(" pounds");
     System.out.print("Policyholder’s BMI: ");
     System.out.printf("%.2f", myPolicy.calcBMI());
     System.out.println();
-    System.out.print("Policy Price: ");
+    System.out.print("Policy Price: $");
     System.out.println(myPolicy.calcPolicyPrice());
 
   }
