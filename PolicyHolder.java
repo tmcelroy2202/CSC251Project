@@ -177,7 +177,7 @@ public class PolicyHolder {
     "Policyholder's Smoking Status (Y/N): " +  this.Smoker + "\n" +
     "Policyholder's Height: " +  Float.toString(this.Height) + " inches \n" +
     "Policyholder's Weight: " +  Float.toString(this.Weight) + " pounds \n" +
-    "Policyholder's BMI: " +  Float.toString(this.calcBMI());
+    "Policyholder's BMI: " +  String.format("%.2f",this.calcBMI());
   }
 
 }

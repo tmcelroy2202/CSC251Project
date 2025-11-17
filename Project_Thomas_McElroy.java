@@ -35,39 +35,18 @@ public class Project_Thomas_McElroy {
     }
     int smokerCount = 0;
     int nonSmokerCount = 0;
+    System.out.println();
     for (Policy policy : policies) {
-      System.out.print("Policy Number: ");
-      System.out.println(policy.getNumber());
-      System.out.print("Provider Name: ");
-      System.out.println(policy.getProviderName());
-      System.out.print("Policyholder’s First Name: ");
-      System.out.println(policy.getPolicyHolder().getFirstName());
-      System.out.print("Policyholder’s Last Name: ");
-      System.out.println(policy.getPolicyHolder().getLastName());
-      System.out.print("Policyholder’s Age: ");
-      System.out.println(policy.getPolicyHolder().getAge());
-      System.out.print("Policyholder’s Smoking Status: ");
-      System.out.println(policy.getPolicyHolder().getSmoker());
-      System.out.print("Policyholder’s Height: ");
-      System.out.print(policy.getPolicyHolder().getHeight());
-      System.out.println(" inches");
-      System.out.print("Policyholder’s Weight: ");
-      System.out.print(policy.getPolicyHolder().getWeight());
-      System.out.println(" pounds");
-      System.out.print("Policyholder’s BMI: ");
-      System.out.printf("%.2f", policy.getPolicyHolder().calcBMI());
+      System.out.print(policy);
       System.out.println();
-      System.out.print("Policy Price: $");
-      System.out.printf("%.2f", policy.calcPolicyPrice());
       System.out.println();
-      System.out.println(); 
       if (policy.getPolicyHolder().getSmoker().equalsIgnoreCase("smoker")) {
         smokerCount++;
       } else {
         nonSmokerCount++;
       }
     }
-    System.out.println("The total number of policies is " + Policy.policyCount);
+    System.out.println("There were " + Policy.policyCount + " Policy objects created");
     System.out.println("The number of policies with a smoker is: " + smokerCount);
     System.out.println("The number of policies with a non-smoker is: " + nonSmokerCount);
   }

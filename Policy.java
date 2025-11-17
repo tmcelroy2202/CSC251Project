@@ -82,8 +82,7 @@ public class Policy {
    */ 
 
   public PolicyHolder getPolicyHolder() {
-    // return new PolicyHolder(this.policyHolder); will uncomment in security commit step, i just know this is the right way but wanna still have commit log look proper.
-    return this.policyHolder;
+    return new PolicyHolder(this.policyHolder); 
   }
 
   /**
@@ -122,7 +121,7 @@ public class Policy {
 "Policy Number: " + this.number + "\n" + 
 "Provider Name: " + this.providerName + "\n" +
 this.policyHolder.toString() + "\n" +
-"Price: " + this.calcPolicyPrice();
+"Policy Price: $" + this.calcPolicyPrice();
 
   }
 }
