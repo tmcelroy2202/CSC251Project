@@ -7,6 +7,7 @@ public class Policy {
   private int number;
   private String providerName;
   private PolicyHolder policyHolder;
+  public static int policyCount = 0;
 
   /**
    * constructor that initializes a Policy object with default values.
@@ -15,6 +16,7 @@ public class Policy {
     this.number = 0;
     this.providerName = "None";
     this.policyHolder = new PolicyHolder("Jane", "Doe", 0, "None", 0, 0);
+    policyCount++;
   }
 
   /**
@@ -34,6 +36,7 @@ public class Policy {
     this.number = number;
     this.providerName = providerName;
     this.policyHolder = new PolicyHolder(holderFirstName,holderLastName,holderAge,holderSmoker,holderWeight,holderHeight);
+    policyCount++;
   }
 
   /**
