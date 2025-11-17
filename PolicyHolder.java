@@ -170,5 +170,15 @@ public class PolicyHolder {
     return (this.getWeight()*703)/((float)(Math.pow(this.getHeight(),2)));
   }
 
+  public String toString(){
+    return "Policyholder's First Name: " +  this.FirstName + "\n" +
+    "Policyholder's Last Name: " +  this.LastName + "\n" +
+    "Policyholder's Age: " +  Integer.toString(this.Age) + "\n" +
+    "Policyholder's Smoking Status (Y/N): " +  this.Smoker + "\n" +
+    "Policyholder's Height: " +  Float.toString(this.Height) + " inches \n" +
+    "Policyholder's Weight: " +  Float.toString(this.Weight) + " pounds \n" +
+    "Policyholder's BMI: " +  Float.toString(this.calcBMI());
+  }
+
 }
 
