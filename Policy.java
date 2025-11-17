@@ -6,12 +6,8 @@ import java.lang.Math;
 public class Policy {
   private int number;
   private String providerName;
-  private String holderFirstName;
-  private String holderLastName;
-  private int holderAge;
-  private String holderSmoker;
-  private float holderWeight;
-  private float holderHeight;
+  private PolicyHolder policyHolder;
+  public static int policyCount = 0;
 
   /**
    * constructor that initializes a Policy object with default values.
@@ -19,12 +15,8 @@ public class Policy {
   public Policy() {
     this.number = 0;
     this.providerName = "None";
-    this.holderFirstName = "Jane";
-    this.holderLastName = "Doe";
-    this.holderAge = 0;
-    this.holderSmoker = "None";
-    this.holderWeight = 0;
-    this.holderHeight = 0;
+    this.policyHolder = new PolicyHolder("Jane", "Doe", 0, "None", 0, 0);
+    policyCount++;
   }
 
   /**
@@ -43,12 +35,8 @@ public class Policy {
       String holderSmoker, float holderWeight, float holderHeight) {
     this.number = number;
     this.providerName = providerName;
-    this.holderFirstName = holderFirstName;
-    this.holderLastName = holderLastName;
-    this.holderAge = holderAge;
-    this.holderSmoker = holderSmoker;
-    this.holderWeight = holderWeight;
-    this.holderHeight = holderHeight;
+    this.policyHolder = new PolicyHolder(holderFirstName,holderLastName,holderAge,holderSmoker,holderWeight,holderHeight);
+    policyCount++;
   }
 
   /**
@@ -70,60 +58,6 @@ public class Policy {
   }
 
   /**
-   * Gets the policyholder's first name.
-   *
-   * @return policyholder's first name.
-   */
-  public String getHolderFirstName() {
-    return this.holderFirstName;
-  }
-
-  /**
-   * Gets the policyholder's last name.
-   *
-   * @return policyholder's last name.
-   */
-  public String getHolderLastName() {
-    return this.holderLastName;
-  }
-
-  /**
-   * Gets the policyholder's age.
-   *
-   * @return policyholder's age.
-   */
-  public int getHolderAge() {
-    return this.holderAge;
-  }
-
-  /**
-   * Gets the policyholder's smoking status.
-   *
-   * @return policyholder's smoking status.
-   */
-  public String getHolderSmoker() {
-    return this.holderSmoker;
-  }
-
-  /**
-   * Gets the policyholder's weight.
-   *
-   * @return policyholder's weight.
-   */
-  public float getHolderWeight() {
-    return this.holderWeight;
-  }
-
-  /**
-   * Gets the policyholder's height.
-   *
-   * @return policyholder's height.
-   */
-  public float getHolderHeight() {
-    return this.holderHeight;
-  }
-
-  /**
    * Sets the policy number.
    *
    * @param number The new policy number.
@@ -142,66 +76,23 @@ public class Policy {
   }
 
   /**
-   * Sets the policyholder's first name.
+   * Gets the policy holder. secure style.
    *
-   * @param name The new first name.
-   */
-  public void setHolderFirstName(String name) {
-    this.holderFirstName = name;
+   * @return The policy holder.
+   */ 
+
+  public PolicyHolder getPolicyHolder() {
+    return new PolicyHolder(this.policyHolder); 
   }
 
   /**
-   * Sets the policyholder's last name.
+   * Sets the policy holder.
    *
-   * @param name The new last name.
-   */
-  public void setHolderLastName(String name) {
-    this.holderLastName = name;
-  }
+   * @param The new policy holder.
+   */ 
 
-  /**
-   * Sets the policyholder's age.
-   *
-   * @param age The new age.
-   */
-  public void setHolderAge(int age) {
-    this.holderAge = age;
-  }
-
-  /**
-   * Sets the policyholder's smoking status.
-   *
-   * @param smoker The new smoking status.
-   */
-  public void setHolderSmoker(String smoker) {
-    this.holderSmoker = smoker;
-  }
-
-  /**
-   * Sets the policyholder's weight.
-   *
-   * @param weight The new weight.
-   */
-  public void setHolderWeight(float weight) {
-    this.holderWeight = weight;
-  }
-
-  /**
-   * Sets the policyholder's height.
-   *
-   * @param height The new height.
-   */
-  public void setHolderHeight(float height) {
-    this.holderHeight = height;
-  }
-
-  /**
-   * Calculates the policyholder's Body Mass Index (BMI).
-   *
-   * @return The calculated BMI.
-   */
-  public float calcBMI(){
-    return (this.getHolderWeight()*703)/((float)(Math.pow(this.getHolderHeight(),2)));
+  public void setPolicyHolder(PolicyHolder policyHolder) {
+    this.policyHolder = policyHolder;
   }
 
   /**
@@ -211,17 +102,26 @@ public class Policy {
    */
   public float calcPolicyPrice() {
     float price = 600;
-    if (this.getHolderAge() > 50){
+    if (this.policyHolder.getAge() > 50){
       price += 75;
     }
-    if (this.getHolderSmoker().equals("smoker")) {
+    if (this.policyHolder.getSmoker().equals("smoker")) {
       price += 100;
     }
-    if (this.calcBMI() > 35) {
-      price += (this.calcBMI()-35)*20;
+    if (this.policyHolder.calcBMI() > 35) {
+      price += (this.policyHolder.calcBMI()-35)*20;
     }
     double rounded = Math.round(price * 100.0) / 100.0;
     price = (float) rounded;
     return price;
+  }
+
+  public String toString() {
+    return 
+"Policy Number: " + this.number + "\n" + 
+"Provider Name: " + this.providerName + "\n" +
+this.policyHolder.toString() + "\n" +
+"Policy Price: $" + this.calcPolicyPrice();
+
   }
 }
