@@ -113,4 +113,13 @@ public class Policy {
     price = (float) rounded;
     return price;
   }
+
+  public String toString() {
+    return 
+"Policy Number: " + this.number + "\n" + 
+"Provider Name: " + this.providerName + "\n" +
+this.policyHolder.toString() + "\n" +
+"Price: " + this.calcPolicyPrice();
+
+  }
 }
